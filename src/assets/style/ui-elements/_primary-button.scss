@@ -1,0 +1,15 @@
+@import './../abstracts/mixins';
+@import './../abstracts/variables';
+
+.primary-button {
+    background-color: $primary-button-color;   
+    border: 0;
+    width: 18.4rem;
+    height: 5.6rem;
+    border-radius: 3rem;
+    -webkit-box-shadow: 0 .4rem 1.6rem 0 rgba(234, 168, 44, 0.2);
+            box-shadow: 0 .4rem 1.6rem 0 rgba(234, 168, 44, 0.2);
+    @include FontMedium;
+    font-size: 1.8rem;
+    color: $primary-button-text-color;
+}

@@ -1,0 +1,9 @@
+
+* {
+    @include FontRegular;
+    color: $primary-text-color;
+}
+
+h1 {
+    @include FontMedium;
+}

@@ -1,0 +1,28 @@
+@mixin flex {
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin layout($children) {
+    width: 100%;
+    &#{$children} {
+        width: $content-width;
+        margin: 0 auto;
+    }
+}
+
+$fallbackfonts: sans-serif;
+
+@mixin FontRegular {
+    font-family: 'book', $fallbackfonts;
+}
+
+@mixin FontMedium {
+    font-family: 'medium', $fallbackfonts;
+}
+
+@mixin FontBold {
+    font-family: 'bold', $fallbackfonts;
+}
