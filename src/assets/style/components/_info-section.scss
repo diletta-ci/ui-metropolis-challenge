@@ -11,8 +11,53 @@
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+
+        .react-tabs {
+            width: 100%;
+            position: relative;
+        }
+
+        .tab-list {
+            position: absolute;
+            right: 0;
+            width: 60rem;
+            margin-right: 6rem;
+            @include flex();
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            text-align: center;
+            li {
+                list-style-type: none;
+                font-size: 18px;
+                max-width: 17.6rem;
+                min-width: 12rem;
+                padding: 8px 0;
+                font-family: 'medium';
+                background: $primary-background;
+                border-radius: 2rem;
+                cursor: pointer;
+
+                &.react-tabs__tab--selected {
+                    background: $button-background;
+                    color: $secondary-text-color;
+                }
+            }   
+        }
+
+        .tab-panel {
+            @include flex();
+            justify-content: space-evenly;
+            align-items: center; 
+        }
+
         .info {
             &__cards {
+                height: 30rem;
+                width: 42rem;
                 @include flex();
                 -webkit-box-align: center;
                     -ms-flex-align: center;
@@ -20,7 +65,6 @@
                 -webkit-box-pack: center;
                     -ms-flex-pack: center;
                         justify-content: center;
-                width: 42rem;
                 background: {
                     image: url('../../media/path2.svg');
                     size: 77%;
@@ -62,59 +106,24 @@
                 }
             }
 
-            &__tabs {
-                max-width: 60rem;
-                .navigation {
-                    min-width: 30rem;
-                    ul {
-                        display: -webkit-box;
-                        display: -ms-flexbox;
-                        display: flex;
-                        -webkit-box-pack: justify;
-                            -ms-flex-pack: justify;
-                                justify-content: space-between;
-                        -webkit-box-align: center;
-                            -ms-flex-align: center;
-                                align-items: center;
-                        text-align: center;
-                        min-height: 9rem;
-                        li {
-                            list-style-type: none;
-                            font-size: 18px;
-                            max-width: 17.6rem;
-                            min-width: 12rem;
-                            padding: 8px 0;
-                            font-family: 'medium';
-                            background: $primary-background;
-                            border-radius: 2rem;
-                            cursor: pointer;
+            &__content {
+                width: 40%;
+                color: $tabs;
+                h2 {
+                    @include FontMedium();
+                    font-size: 2.4rem;
+                    line-height: 4rem;
+                    text-align: left;
+                    margin-bottom: 1.6rem;
+                }
 
-                            &.react-tabs__tab--selected {
-                                background: $button-background;
-                                color: $secondary-text-color;
-                            }
-                        }
-                    }
-
-                    .react-tabs__tab-panel {
-                        color: $tabs;
-                        h2 {
-                            @include FontMedium();
-                            font-size: 2.4rem;
-                            line-height: 4rem;
-                            text-align: left;
-                            margin-bottom: 1.6rem;
-                        }
-
-                        p {
-                            @include FontRegular();
-                            font-size: 1.6rem;
-                            font-weight: 400;
-                            line-height: 2.4rem;
-                            max-width: 48.8rem;
-                            text-align: left;  
-                        }
-                    }
+                p {
+                    @include FontRegular();
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    line-height: 2.4rem;
+                    max-width: 48.8rem;
+                    text-align: left;  
                 }
             }
         }
@@ -124,30 +133,36 @@
 
 @media only screen and (max-width: $small-device) {
     .info-section {
+        padding-bottom: 0;
         .info-container {
             display: block;
 
-            .info {
-                &__cards {
-                    width: 32rem;
-                    background-size: 100%;
-                    margin: 0 auto;
+            .tab-list {
+                top: -10%;
+                width: 30rem;
+                li {
+                    font-size: 1.4rem;
                 }
-
-                &__tabs {
-                    margin-top: 4rem;
-                    .navigation {
-                        ul li {
-                            font-size: 1.4rem;
-                        }
+            }
+            
+            
+            .tab-panel {
+                display: block;
+                margin-top: 4rem;
+                .info {
+                    &__content {
+                        padding: 0 3.5rem;
+                        width: 100%;
+                        margin-top: 4rem;
                     }
 
-                    .react-tabs__tab-panel {
-                        padding: 0 3.5rem;
+                    &__cards {
+                        width: 32rem;
+                        background-size: 100%;
+                        margin: 0 auto;
                     }
                 }
             }
         }
-
     }
 }
