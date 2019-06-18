@@ -20,7 +20,7 @@
                 -webkit-box-pack: center;
                     -ms-flex-pack: center;
                         justify-content: center;
-                min-width: 42rem;
+                width: 42rem;
                 background: {
                     image: url('../../media/path2.svg');
                     size: 77%;
@@ -81,7 +81,8 @@
                         li {
                             list-style-type: none;
                             font-size: 18px;
-                            min-width: 17.6rem;
+                            max-width: 17.6rem;
+                            min-width: 12rem;
                             padding: 8px 0;
                             font-family: 'medium';
                             background: $primary-background;
@@ -110,12 +111,43 @@
                             font-size: 1.6rem;
                             font-weight: 400;
                             line-height: 2.4rem;
-                            width: 48.8rem;
+                            max-width: 48.8rem;
                             text-align: left;  
                         }
                     }
                 }
             }
         }
+    }
+}
+
+
+@media only screen and (max-width: $small-device) {
+    .info-section {
+        .info-container {
+            display: block;
+
+            .info {
+                &__cards {
+                    width: 32rem;
+                    background-size: 100%;
+                    margin: 0 auto;
+                }
+
+                &__tabs {
+                    margin-top: 4rem;
+                    .navigation {
+                        ul li {
+                            font-size: 1.4rem;
+                        }
+                    }
+
+                    .react-tabs__tab-panel {
+                        padding: 0 3.5rem;
+                    }
+                }
+            }
+        }
+
     }
 }
