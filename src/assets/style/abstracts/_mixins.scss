@@ -5,14 +5,6 @@
     display: flex;
 }
 
-@mixin layout($children) {
-    width: 100%;
-    &#{$children} {
-        width: $content-width;
-        margin: 0 auto;
-    }
-}
-
 $fallbackfonts: sans-serif;
 
 @mixin FontRegular {
